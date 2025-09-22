@@ -27,7 +27,7 @@ export const Footer = () => {
               <li><a href="#" className="text-muted-foreground hover:text-accent transition-colors">Lighting Cables</a></li>
               <li><a href="#" className="text-muted-foreground hover:text-accent transition-colors">XLR Connectors</a></li>
               <li><a href="#" className="text-muted-foreground hover:text-accent transition-colors">6.3mm Jacks</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-accent transition-colors">RCS Connectors</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-accent transition-colors">RCA Connectors</a></li>
             </ul>
           </div>
 

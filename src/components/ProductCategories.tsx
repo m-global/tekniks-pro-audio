@@ -29,10 +29,10 @@ export const ProductCategories = () => {
     },
     {
       title: "Connectors",
-      description: "XLR, 6.3mm Jacks, and RCS connectors for professional applications",
+      description: "XLR, 6.3mm Jacks, and RCA connectors for professional applications",
       icon: Plug,
       image: connectorsImage,
-      specs: ["XLR Balanced", "6.3mm Mono/Stereo", "RCS Standard", "Gold Plated Contacts"]
+      specs: ["XLR Balanced", "6.3mm Mono/Stereo", "RCA Standard", "Gold Plated Contacts"]
     }
   ];
 

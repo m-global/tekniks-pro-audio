@@ -62,14 +62,16 @@ export const SpecificationsSection = () => {
       ]
     },
     {
-      type: "RCS Connectors",
+      type: "RCA Connectors",
       specs: [
-        "BNC Style Bayonet Lock",
+        "Male/Female RCA Plugs",
         "75Ω Impedance Matched",
         "Gold Plated Center Pin",
         "Precision Machined Housing",
         "High Frequency Performance",
-        "Professional Installation Grade"
+        "Professional Installation Grade",
+        "Audio/Video Applications",
+        "Color Coded Options"
       ]
     }
   ];
