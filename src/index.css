@@ -2,41 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* TEKNIK Professional Design System - Industrial & Technical Aesthetic
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Brand Colors */
+    --background: 215 25% 8%;
+    --foreground: 210 20% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card System */
+    --card: 215 25% 10%;
+    --card-foreground: 210 20% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 215 25% 10%;
+    --popover-foreground: 210 20% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Brand Primary - Deep Professional Blue */
+    --primary: 215 85% 25%;
+    --primary-foreground: 210 20% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Technical Orange Accent */
+    --accent: 25 95% 55%;
+    --accent-foreground: 215 25% 8%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Secondary Grays */
+    --secondary: 215 15% 15%;
+    --secondary-foreground: 210 20% 90%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 215 15% 12%;
+    --muted-foreground: 215 10% 65%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Technical Variants */
+    --technical: 195 100% 40%;
+    --technical-foreground: 210 20% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --quality: 120 60% 45%;
+    --quality-foreground: 210 20% 98%;
+
+    /* System Colors */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 215 15% 20%;
+    --input: 215 15% 18%;
+    --ring: 25 95% 55%;
 
     --radius: 0.5rem;
+
+    /* Professional Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--technical)));
+    --gradient-accent: linear-gradient(90deg, hsl(var(--accent)), hsl(25 85% 60%));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(215 20% 12%));
+
+    /* Technical Shadows */
+    --shadow-professional: 0 10px 40px -12px hsl(var(--primary) / 0.4);
+    --shadow-accent: 0 8px 32px -8px hsl(var(--accent) / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(215 25% 5% / 0.5);
+
+    /* Animation Timings */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -55,34 +82,14 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+  .light {
+    /* Light mode for accessibility (optional) */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 8%;
+    --card: 210 20% 100%;
+    --card-foreground: 215 25% 8%;
+    --border: 215 15% 85%;
+    --input: 215 15% 90%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +107,53 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Professional Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent to-orange-400 bg-clip-text text-transparent;
+  }
+}
+
+@layer components {
+  /* Professional Button Variants */
+  .btn-hero {
+    @apply bg-gradient-to-r from-accent to-orange-400 text-accent-foreground hover:from-orange-400 hover:to-accent transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
+  }
+
+  .btn-technical {
+    @apply bg-technical text-technical-foreground hover:bg-technical/90 transition-colors duration-200;
+  }
+
+  .btn-outline-professional {
+    @apply border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300;
+  }
+
+  /* Professional Cards */
+  .card-professional {
+    @apply bg-gradient-to-br from-card to-slate-800/50 backdrop-blur-sm border border-border/50 shadow-card hover:shadow-professional transition-all duration-300;
+  }
+
+  .card-product {
+    @apply bg-card/80 backdrop-blur-sm border border-border/30 hover:border-accent/50 transition-all duration-300 hover:scale-105;
+  }
+
+  /* Technical Grid */
+  .grid-technical {
+    @apply grid gap-6 md:gap-8;
+  }
+
+  /* Professional Animations */
+  .animate-fade-up {
+    @apply animate-in fade-in-0 slide-in-from-bottom-4 duration-700;
+  }
+
+  .animate-scale-in {
+    @apply animate-in fade-in-0 zoom-in-95 duration-500;
   }
 }
