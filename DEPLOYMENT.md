@@ -8,24 +8,30 @@ This project is configured for automatic deployment to GitHub Pages.
 
 The site will automatically deploy to GitHub Pages whenever you push to the `main` branch. The deployment is handled by GitHub Actions.
 
-**Your site will be available at:** `https://[your-username].github.io/tekniks-pro-audio/`
+**Your site will be available at:** `https://m-global.github.io/tekniks-pro-audio/`
 
 ### Manual Deployment Steps
 
 1. **Enable GitHub Pages in your repository:**
-   - Go to your repository on GitHub
+   - Go to your repository on GitHub: https://github.com/m-global/tekniks-pro-audio
    - Click on "Settings" tab
-   - Scroll down to "Pages" section
-   - Under "Source", select "GitHub Actions"
+   - Scroll down to "Pages" section (in the left sidebar under "Code and automation")
+   - Under "Build and deployment" → "Source", select **"GitHub Actions"**
+   
+2. **Ensure proper permissions (IMPORTANT for contributors):**
+   - The repository owner (m-global) must ensure Actions have permissions
+   - Go to Settings → Actions → General
+   - Under "Workflow permissions", ensure "Read and write permissions" is selected
+   - Check "Allow GitHub Actions to create and approve pull requests"
 
-2. **Push your changes:**
+3. **Push your changes:**
    ```bash
    git add .
    git commit -m "Configure GitHub Pages deployment"
    git push origin main
    ```
 
-3. **Monitor the deployment:**
+4. **Monitor the deployment:**
    - Go to the "Actions" tab in your repository
    - You should see a workflow called "Deploy to GitHub Pages"
    - Wait for it to complete successfully
